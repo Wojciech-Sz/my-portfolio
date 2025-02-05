@@ -56,11 +56,11 @@
   }
 
   .nav-ul {
-    @apply flex flex-col items-center gap-4 sm:flex-row md:gap-6 relative z-20;
+    @apply flex flex-col items-center gap-4 md:flex-row md:gap-6 relative z-20;
   }
 
   .nav-li {
-    @apply text-neutral-400 hover:text-white font-sans max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
+    @apply text-neutral-400 hover:text-white font-sans max-md:hover:bg-black-500 max-md:w-full max-md:rounded-md py-2 max-md:px-5;
   }
 
   .nav-li_a {
@@ -68,7 +68,7 @@
   }
 
   .nav-sidebar {
-    @apply absolute left-0 right-0 bg-black-200 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block;
+    @apply absolute left-0 right-0 bg-black-200 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto md:hidden block;
   }
 
   .text-gray_gradient {
