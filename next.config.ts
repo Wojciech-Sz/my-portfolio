@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   transpilePackages: ["three"],
+  serverExternalPackages: ["pino", "pino-pretty"],
 };
 
 export default nextConfig;

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useTransition } from "react";
 import Image from "next/image";
 import terminal from "../../../public/assets/terminal.png";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,7 +19,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Loader } from "lucide-react";
+import { sendEmail } from "@/lib/actions/email.action";
 
 const Contact = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -31,31 +32,25 @@ const Contact = () => {
     },
   });
   const { toast } = useToast();
+  const [isPending, startTransition] = useTransition();
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    const response = await fetch("/api/email", {
-      method: "POST",
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
-    const data = await response.json();
-    console.log("fetch response:", data);
-    const message = data.error
-      ? {
-          title: "Message could not be sent",
-          variant: "destructive" as const,
-        }
-      : {
-          title: "Message sent",
-          variant: "default" as const,
-        };
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    startTransition(async () => {
+      const result = await sendEmail(data);
 
-    form.reset();
-    toast({
-      ...message,
+      if (result.success) {
+        toast({
+          title: "Sukces",
+          description: "Wiadomość została wysłana pomyślnie",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Błąd",
+          description: "Wiadomość nie została wysłana",
+          variant: "destructive",
+        });
+      }
     });
   };
 
@@ -141,11 +136,15 @@ const Contact = () => {
               />
               <Button
                 type="submit"
-                disabled={form.formState.isSubmitting}
+                disabled={isPending}
                 className={"field-btn"}
               >
-                {form.formState.isSubmitting ? "Sending..." : "Send message"}
-                <ArrowUpRight className={"size-5"} />
+                {isPending ? "Sending..." : "Send message"}
+                {isPending ? (
+                  <Loader className={"size-5 animate-spin"} />
+                ) : (
+                  <ArrowUpRight className={"size-5"} />
+                )}
               </Button>
             </form>
           </Form>

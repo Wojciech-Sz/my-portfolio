@@ -5,7 +5,7 @@ import { Star } from "lucide-react";
 
 const Testimonials = () => {
   return (
-    <section className={"c-space py-20"}>
+    <section id={"testimonials"} className={"c-space py-20"}>
       <h3 className={"head-text"}>Hear from My Clients</h3>
       <div className={"client-container"}>
         {clientReviews.map(({ id, name, review, position, img }) => (

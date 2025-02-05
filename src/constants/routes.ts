@@ -1,5 +1,5 @@
 export const ROUTES = [
-  { href: "#", name: "Home" },
+  { href: "/#home", name: "Home" },
   { href: "/#about", name: "About" },
   { href: "/#projects", name: "Projects" },
   { href: "/#experience", name: "Experience" },
