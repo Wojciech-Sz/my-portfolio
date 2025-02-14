@@ -9,7 +9,7 @@ const PricingSEO = () => {
   return (
     <section className="mt-12">
       <h3 className="mb-12 text-center text-2xl font-bold text-accent-foreground sm:text-3xl">
-        SEO Packages
+        <span className="text-ocean-blue_gradient">SEO</span> Packages
       </h3>
       <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] content-center gap-8 md:grid-cols-2 xl:grid-cols-3">
         {packages.map((pkg, index) => (
@@ -18,7 +18,7 @@ const PricingSEO = () => {
             className="row-span-4 grid grid-rows-subgrid gap-0 overflow-hidden rounded-lg border border-border p-8"
           >
             <div>
-              <h4 className="text-electric-blue_gradient mb-2 text-2xl font-semibold">
+              <h4 className="text-ocean-blue_gradient mb-2 text-2xl font-semibold">
                 {pkg.name}
               </h4>
               <p className="mb-4 text-card-foreground">{pkg.description}</p>
@@ -41,7 +41,7 @@ const PricingSEO = () => {
               <p className="mb-6 text-sm text-card-foreground">
                 Ideal for: {pkg.audience}
               </p>
-              <button className="bg-cosmic-blue_gradient w-full rounded-md py-3 font-semibold text-foreground transition-colors duration-300 hover:bg-primary/90">
+              <button className="bg-midnight-ocean_gradient w-full rounded-md py-3 font-semibold text-foreground transition-colors duration-300 hover:bg-primary/90">
                 Get Started
               </button>
             </div>

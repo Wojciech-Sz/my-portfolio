@@ -55,7 +55,7 @@ const About = () => {
   return (
     <section id="about" className="c-space py-20">
       <h2 className="head-text">
-        Few words<span className="text-cosmic-blue_gradient"> about Me</span>
+        Few words<span className="text-cosmic-blue_gradient"> About Me</span>
       </h2>
       <div
         className={

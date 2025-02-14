@@ -15,7 +15,9 @@ const Experience = () => {
   return (
     <section id="work" className="c-space py-20">
       <div className="w-full text-card-foreground">
-        <h2 className="head-text">My Work Experience</h2>
+        <h2 className="head-text">
+          My Work <span className="text-cosmic-blue_gradient">Experience</span>
+        </h2>
         <div className="work-container">
           <div className="work-canvas">
             <Canvas>

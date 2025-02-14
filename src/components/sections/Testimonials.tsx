@@ -7,12 +7,16 @@ import { clientReviews } from "@/constants";
 const Testimonials = () => {
   return (
     <section id="testimonials" className="c-space py-20">
-      <h2 className="head-text">Hear from My Clients</h2>
+      <h2 className="head-text">
+        Hear from<span className="text-cosmic-blue_gradient"> My Clients</span>
+      </h2>
       <div className="client-container">
         {clientReviews.map(({ id, name, review, position, img }) => (
-          <div key={id} className="client-review">
-            <p className="font-light text-foreground">{review}</p>
-            <div className="client-content">
+          <div key={id} className="client-review group">
+            <p className="font-light text-foreground transition-all group-hover:translate-x-2">
+              {review}
+            </p>
+            <div className="client-content transition-all group-hover:translate-x-2">
               <div className="flex gap-3">
                 <Image
                   src={img}
