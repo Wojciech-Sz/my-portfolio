@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+
 import "./globals.css";
+import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/sections/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
@@ -28,9 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans font-bold antialiased dark`}
+        className={`${geistSans.variable} ${geistMono.variable} dark font-sans font-bold antialiased`}
       >
-        {children}
+        <main className="relative mx-auto max-w-7xl">
+          <Navbar />
+          {children}
+          <Footer />
+        </main>
         <Toaster />
       </body>
     </html>

@@ -1,5 +1,6 @@
-import React from "react";
 import { Html, useProgress } from "@react-three/drei";
+import React from "react";
+
 import { Progress } from "../ui/progress";
 
 const CanvasLoader = () => {
@@ -22,7 +23,7 @@ const CanvasLoader = () => {
       />
       <p
         style={{ marginTop: 40 }}
-        className="text-sm text-[#f1f1f1] font-extrabold "
+        className="text-sm font-extrabold text-[#f1f1f1] "
       >
         {progress !== 0 ? `${progress.toFixed(2)}%` : "Loading..."}
       </p>

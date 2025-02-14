@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
-import NavItems from "@/components/NavItems";
-import MenuIcon from "@/components/MenuIcon";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Button } from "@/components/ui/button";
+import gsap from "gsap";
 import Link from "next/link";
+import { useRef, useState } from "react";
+
+import MenuIcon from "@/components/MenuIcon";
+import NavItems from "@/components/NavItems";
 
 gsap.registerPlugin(useGSAP);
 const Navbar = () => {
@@ -64,30 +64,28 @@ const Navbar = () => {
   });
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center py-5 mx-auto c-space">
+    <header className="fixed inset-x-0 top-0 z-50 bg-background/90">
+      <div className="mx-auto max-w-7xl">
+        <div className="c-space mx-auto flex items-center justify-between py-5">
           <Link
             href="/#home"
             scroll
-            className="text-neutral-400 font-bold text-xl hover:text-white transition-colors"
+            className="text-xl font-bold text-card-foreground transition-colors hover:text-foreground"
           >
             Wojtek
           </Link>
-          <Button
-            className="text-neutral-400 hover:text-white transition-colors focus:outline-none md:hidden flex"
+          <button
+            className="flex text-card-foreground transition-colors hover:text-foreground focus:outline-none md:hidden"
             aria-label="Toggle Menu"
-            variant={"ghost"}
-            size={"icon"}
             onClick={() => toggleMenu()}
           >
             <MenuIcon
               topLine={topLine}
               middleLine={middleLine}
               bottomLine={bottomLine}
-              className="size-5"
+              className="size-6"
             />
-          </Button>
+          </button>
 
           <nav className="hidden md:flex">
             <NavItems />

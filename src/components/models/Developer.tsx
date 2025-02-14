@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
 import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
+import React, { useEffect, useRef } from "react";
 
 const Developer = ({ animationName = "idle", ...props }) => {
   const { nodes, materials } = useGLTF("/models/animations/developer.glb");
@@ -9,13 +9,13 @@ const Developer = ({ animationName = "idle", ...props }) => {
 
   const { animations: idleAnimation } = useFBX("/models/animations/idle.fbx");
   const { animations: saluteAnimation } = useFBX(
-    "/models/animations/salute.fbx",
+    "/models/animations/salute.fbx"
   );
   const { animations: clappingAnimation } = useFBX(
-    "/models/animations/clapping.fbx",
+    "/models/animations/clapping.fbx"
   );
   const { animations: victoryAnimation } = useFBX(
-    "/models/animations/victory.fbx",
+    "/models/animations/victory.fbx"
   );
 
   idleAnimation[0].name = "idle";
@@ -30,7 +30,7 @@ const Developer = ({ animationName = "idle", ...props }) => {
       clappingAnimation[0],
       victoryAnimation[0],
     ],
-    group,
+    group
   );
 
   useEffect(() => {

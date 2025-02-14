@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useTransition } from "react";
-import Image from "next/image";
-import terminal from "../../../public/assets/terminal.png";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowUpRight, Loader } from "lucide-react";
+import Image from "next/image";
+import React, { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import formSchema from "@/lib/validations";
+
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,10 +17,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowUpRight, Loader } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import { sendEmail } from "@/lib/actions/email.action";
+import formSchema from "@/lib/validations";
+
+import terminal from "../../../public/assets/terminal.png";
 
 const Contact = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -55,40 +57,40 @@ const Contact = () => {
   };
 
   return (
-    <section id={"contact"} className={"c-space py-20"}>
+    <section id="contact" className="c-space py-20">
       <div
         className={
-          "relative min-h-screen flex items-center justify-center flex-col"
+          "relative flex min-h-screen flex-col items-center justify-center"
         }
       >
         <Image
           src={terminal}
-          alt={"terminal background"}
-          className={"absolute h-full inset-0"}
+          alt="terminal background"
+          className="absolute inset-0 h-full"
         />
-        <div className={"contact-container"}>
-          <h3 className={"head-text"}>Let&apos;s talk</h3>
-          <p className={"text-lg text-white-600 mt-3"}>
+        <div className="contact-container">
+          <h3 className="head-text">Let&apos;s talk</h3>
+          <p className="mt-3 text-lg text-card-foreground">
             Whether you’re looking to build a new website, improve your existing
             platform, or bring a unique project to life, I’m here to help.
           </p>
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="flex flex-col gap-7 mt-12"
+              className="mt-12 flex flex-col gap-7"
             >
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className={"field-label"}>Full Name</FormLabel>
+                    <FormLabel className="field-label">Full Name</FormLabel>
                     <FormControl>
                       <Input
-                        type={"text"}
+                        type="text"
                         placeholder="John Doe"
                         {...field}
-                        className={"field-input"}
+                        className="field-input"
                       />
                     </FormControl>
                     <FormMessage />
@@ -100,11 +102,11 @@ const Contact = () => {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className={"field-label"}>E-mail</FormLabel>
+                    <FormLabel className="field-label">E-mail</FormLabel>
                     <FormControl>
                       <Input
-                        type={"email"}
-                        className={"field-input"}
+                        type="email"
+                        className="field-input"
                         placeholder="johndoe@gmail.com"
                         {...field}
                       />
@@ -119,12 +121,10 @@ const Contact = () => {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className={"field-label"}>
-                      Your Message
-                    </FormLabel>
+                    <FormLabel className="field-label">Your Message</FormLabel>
                     <FormControl>
                       <Textarea
-                        className={"field-input"}
+                        className="field-input"
                         placeholder="Hi, I'm interested in..."
                         rows={5}
                         {...field}
@@ -134,16 +134,12 @@ const Contact = () => {
                   </FormItem>
                 )}
               />
-              <Button
-                type="submit"
-                disabled={isPending}
-                className={"field-btn"}
-              >
+              <Button type="submit" disabled={isPending} className="field-btn">
                 {isPending ? "Sending..." : "Send message"}
                 {isPending ? (
-                  <Loader className={"size-5 animate-spin"} />
+                  <Loader className="size-5 animate-spin" />
                 ) : (
-                  <ArrowUpRight className={"size-5"} />
+                  <ArrowUpRight className="size-5" />
                 )}
               </Button>
             </form>

@@ -1,14 +1,13 @@
-import { useGLTF } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
-
+import { useGLTF } from "@react-three/drei";
 import gsap from "gsap";
-import { Mesh } from "three";
 import { useRef } from "react";
+import { Mesh } from "three";
 
 gsap.registerPlugin(useGSAP);
 const Target = (props) => {
   const { scene } = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf",
+    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf"
   );
   const targetRef = useRef<Mesh>(null!);
 

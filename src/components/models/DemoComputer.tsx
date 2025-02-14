@@ -5,10 +5,10 @@ License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-models/3d-computer-sketchfab-weekly-11-mar23-d9931a9aba7c4ea1bc12b2a59dcef16e
 Title: 3d computer  - Sketchfab Weekly - 11 Mar'23
 */
-import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations, useVideoTexture } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
+import { useGLTF, useVideoTexture } from "@react-three/drei";
 import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
 import { Group } from "three";
 
 gsap.registerPlugin(useGSAP);
@@ -17,7 +17,7 @@ const DemoComputer = (props) => {
   const group = useRef<Group>(null);
   const { nodes, materials } = useGLTF("/models/computer.glb");
   const txt = useVideoTexture(
-    props.texture ? props.texture : "/textures/project/project1.mp4",
+    props.texture ? props.texture : "/textures/project/project1.mp4"
   );
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const DemoComputer = (props) => {
   }, [txt]);
 
   useGSAP(() => {
-    gsap.from(group.current.rotation, {
+    gsap.from(group.current!.rotation, {
       y: Math.PI / 2,
       duration: 1,
       ease: "power3.inOut",

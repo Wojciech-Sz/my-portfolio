@@ -1,18 +1,21 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import grid1 from "../../../public/assets/grid1.png";
-import { stack } from "@/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { Copy, CopyCheck } from "lucide-react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useRef, useState } from "react";
 
-const DynamicGlobe = dynamic(() => import("react-globe.gl"), { ssr: false });
 import MyButton from "@/components/MyButton";
+import { stack } from "@/constants";
+
+import grid1 from "../../../public/assets/grid1.png";
 import grid3 from "../../../public/assets/grid3.png";
 import grid4 from "../../../public/assets/grid4.png";
-import { Copy, CopyCheck } from "lucide-react";
+
+const DynamicGlobe = dynamic(() => import("react-globe.gl"), { ssr: false });
 
 gsap.registerPlugin(useGSAP);
 
@@ -50,52 +53,66 @@ const About = () => {
   };
 
   return (
-    <section id={"about"} className={"c-space py-20"}>
+    <section id="about" className="c-space py-20">
+      <h2 className="head-text">
+        Few words<span className="text-cosmic-blue_gradient"> about Me</span>
+      </h2>
       <div
         className={
-          "grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:grid-rows-6 gap-5 h-full"
+          "mt-12 grid h-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-6"
         }
       >
-        <div className={"col-span-1 xl:row-span-3"}>
-          <div className={"grid-container"}>
+        <div className="col-span-1 xl:row-span-3">
+          <div className="grid-container group">
             <Image
               src={grid1}
-              alt={"grid-1"}
-              className={"w-full sm:h-[276px] h-fit object-contain"}
+              alt="grid-1"
+              className="h-fit w-full object-contain sm:h-[276px]"
             />
             <div>
-              <p className={"grid-header"}>Hi, I am Wojtek</p>
-              <p className={"grid-subtext"}>
-                With 1 year of experience, I have honed my skills in frontend
-                and backend development, with a focus on animated 3D websites.
+              <h3 className="grid-header">Hi, I am Wojtek</h3>
+              <p className="grid-subtext">
+                With many projects and courses completed, I have honed my skills
+                in frontend and backend development.
               </p>
             </div>
           </div>
         </div>
 
-        <div className={"col-span-1 xl:row-span-3"}>
-          <div className="grid-container">
+        <div className="col-span-1 xl:row-span-3">
+          <div className="grid-container group">
             <ul
-              className={"flex h-[276px] w-full relative"}
+              className="relative flex h-[276px] w-full"
               onMouseEnter={() => rotate.current?.pause()}
               onMouseLeave={() => rotate.current?.resume()}
             >
               {stack.map(({ img, name }, i) => (
                 <li
                   key={name}
-                  className={`li absolute top-0 left-1/2 h-1/2 -translate-x-1/2 origin-bottom rotate-${i * 60}`}
+                  // eslint-disable-next-line tailwindcss/no-custom-classname
+                  className={`li rotate-${i * 60} absolute left-1/2 top-0 h-1/2 origin-bottom -translate-x-1/2`}
                 >
                   <Image
                     src={img}
                     alt={name}
-                    className={`icon size-10 -rotate-${i * 60}`}
+                    // eslint-disable-next-line tailwindcss/no-custom-classname
+                    className={`icon -rotate-${i * 60} size-10`}
                   />
                 </li>
               ))}
+              <li className="absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2">
+                <Image
+                  src="/assets/logo.png"
+                  alt="logo"
+                  width={1024}
+                  height={1024}
+                  className="object-contain"
+                />
+              </li>
             </ul>
             <div>
-              <p className={"grid-header"}>Tech Stack</p>
-              <p className={"grid-subtext"}>
+              <h3 className="grid-header">Tech Stack</h3>
+              <p className="grid-subtext">
                 I specialize in JavaScript/TypeScript with a focus on React and
                 Next.js ecosystems.
               </p>
@@ -103,11 +120,11 @@ const About = () => {
           </div>
         </div>
 
-        <div className={"col-span-1 xl:row-span-4"}>
-          <div className={"grid-container"}>
+        <div className="col-span-1 xl:row-span-4">
+          <div className="grid-container group">
             <div
               className={
-                "rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center"
+                "flex h-fit w-full cursor-grab items-center justify-center rounded-3xl sm:h-[326px]"
               }
             >
               <DynamicGlobe
@@ -120,34 +137,34 @@ const About = () => {
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
               />
             </div>
-            <div>
-              <p className={"grid-header"}>
+            <div className="h-full">
+              <h3 className="grid-header">
                 I work remotely across most timezones.
-              </p>
-              <p className={"grid-subtext"}>
+              </h3>
+              <p className="grid-subtext">
                 I&apos;m based in Poland, with remote work available.
               </p>
-              <a href="/#contact">
+              <Link href="/#contact">
                 <MyButton
-                  name={"Get in touch"}
+                  name="Get in touch"
                   isBeam
-                  containerClass={"w-full mt-10"}
+                  containerClass="w-full mt-10"
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className={"xl:col-span-2 xl:row-span-3"}>
-          <div className={"grid-container"}>
+        <div className="xl:col-span-2 xl:row-span-3">
+          <div className="grid-container group">
             <Image
               src={grid3}
-              alt={"grid-3"}
-              className={"w-full sm:h-[326px] h-fit object-contain"}
+              alt="grid-3"
+              className="h-fit w-full object-contain sm:h-[326px]"
             />
             <div>
-              <p className={"grid-header"}>My Passion for Coding</p>
-              <p className={"grid-subtext text-balance"}>
+              <h3 className="grid-header">My Passion for Coding</h3>
+              <p className="grid-subtext text-balance">
                 I love solving problems and building things through code. Coding
                 isn&apos;t just my profession - it is my passion.
               </p>
@@ -155,27 +172,27 @@ const About = () => {
           </div>
         </div>
 
-        <div className={"xl:col-span-1 xl:row-span-2 md:col-span-2"}>
-          <div className={"grid-container"}>
+        <div className="md:col-span-2 xl:col-span-1 xl:row-span-2">
+          <div className="grid-container group">
             <Image
               src={grid4}
-              alt={"grid-4"}
+              alt="grid-4"
               className={
-                "w-full xl:h-[126px] object-contain sm:h-[276px] h-fit xl:object-cover sm:object-top"
+                "h-fit w-full object-contain sm:h-[276px] sm:object-top xl:h-[126px] xl:object-cover"
               }
             />
-            <div className={"flex flex-col gap-2"}>
-              <p className={"grid-subtext text-center"}>Contact Me</p>
+            <div className="flex flex-col gap-2">
+              <p className="grid-subtext text-center">Contact Me</p>
               <div
                 className={
-                  "copy-container text-[#afb0b6] flex flex-wrap-reverse"
+                  "copy-container flex flex-wrap-reverse text-[#afb0b6]"
                 }
                 onClick={handleCopy}
               >
                 {hasCopied ? <CopyCheck /> : <Copy />}
-                <p className={"lg:text-2xl md:text-xl font-medium text-white"}>
+                <h3 className="font-medium text-foreground md:text-xl lg:text-2xl">
                   wsz.socials.contact@gmail.com
-                </p>
+                </h3>
               </div>
             </div>
           </div>

@@ -1,20 +1,20 @@
 "use client";
 
+import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { PerspectiveCamera, useProgress } from "@react-three/drei";
-import HackerRoom from "@/components/models/HackerRoom";
-import CanvasLoader from "@/components/scenes/CanvasLoader";
-import Target from "@/components/models/Target";
-import { Suspense } from "react";
-
-import { useMediaQuery } from "react-responsive";
-import { calculateSizes } from "@/lib/utils";
-import ReactLogo from "@/components/models/ReactLogo";
-import Cube from "@/components/models/Cube";
-import Rings from "@/components/models/Rings";
-import HeroCamera from "@/components/scenes/HeroCamera";
 import Link from "next/link";
+import { Suspense } from "react";
+import { useMediaQuery } from "react-responsive";
+
+import Cube from "@/components/models/Cube";
+import HackerRoom from "@/components/models/HackerRoom";
+import ReactLogo from "@/components/models/ReactLogo";
+import Rings from "@/components/models/Rings";
+import Target from "@/components/models/Target";
 import MyButton from "@/components/MyButton";
+import CanvasLoader from "@/components/scenes/CanvasLoader";
+import HeroCamera from "@/components/scenes/HeroCamera";
+import { calculateSizes } from "@/lib/utils";
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -25,19 +25,22 @@ const Hero = () => {
 
   return (
     <section
-      id={"home"}
-      className="min-h-screen h-[900px] w-full flex flex-col relative"
+      id="home"
+      className="relative flex h-[900px] min-h-screen w-full flex-col"
     >
-      <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <p className="text-white sm:text-3xl text-2xl font-medium text-center font-sans">
-          Hi, I am Wojtek <span className="waving-hand">👋</span>
-        </p>
-        <p className="hero_tag text-gray_gradient">
+      <div className="c-space mx-auto mt-20 flex w-full flex-col gap-3 sm:mt-28">
+        <h1 className="text-center font-sans text-2xl font-medium text-foreground md:text-3xl">
+          Hi, I am <span className="text-cosmic-blue_gradient">Wojtek</span>{" "}
+          <span className="waving-hand">👋</span>
+          <br />
+          Next.js Developer and SEO based in Poland
+        </h1>
+        <p className="hero_tag text-cosmic-blue_gradient">
           Building Products & Brands
         </p>
       </div>
 
-      <div className="size-full absolute inset-0">
+      <div className="absolute inset-0 size-full">
         <Canvas className="size-full">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 22]} />
@@ -60,12 +63,12 @@ const Hero = () => {
         </Canvas>
       </div>
 
-      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+      <div className="c-space absolute inset-x-0 bottom-7 z-10 w-full">
         <Link href="/#about" scroll>
           <MyButton
-            name={"Let's work together"}
+            name="Let's work together"
             isBeam
-            containerClass={"sm:w-fit w-full sm:min-w-96"}
+            containerClass="sm:w-fit w-full sm:min-w-96"
           />
         </Link>
       </div>

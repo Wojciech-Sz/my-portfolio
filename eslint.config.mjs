@@ -1,9 +1,8 @@
-import _import from "eslint-plugin-import";
-import { fixupPluginRules } from "@eslint/compat";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
+
 import { FlatCompat } from "@eslint/eslintrc";
+import js from "@eslint/js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,7 +12,7 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default [
+const config = [
   {
     ignores: ["components/ui/**/*"],
   },
@@ -22,14 +21,10 @@ export default [
     "next/typescript",
     "standard",
     "plugin:tailwindcss/recommended",
-    "prettier",
-    "plugin:@react-three/recommended"
+    "plugin:@react-three/recommended",
+    "prettier"
   ),
   {
-    plugins: {
-      import: fixupPluginRules(_import),
-    },
-
     rules: {
       "import/order": [
         "error",
@@ -71,3 +66,5 @@ export default [
     },
   },
 ];
+
+export default config;
