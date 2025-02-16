@@ -113,7 +113,7 @@ const Projects = () => {
 
         <div
           className={
-            "bg-frosty-mist_gradient h-96 overflow-hidden rounded-lg border border-border md:h-full"
+            "bg-frosty-mist_gradient h-96 cursor-grab overflow-hidden rounded-lg border border-border active:cursor-grabbing md:h-full"
           }
         >
           <Canvas className="size-full" style={{ minHeight: "300px" }}>

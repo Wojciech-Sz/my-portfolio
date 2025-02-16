@@ -183,7 +183,7 @@
   }
 
   .work-canvas {
-    @apply col-span-1 bg-frosty-mist_gradient rounded-lg min-h-[500px]  border border-border;
+    @apply col-span-1 cursor-grab active:cursor-grabbing bg-frosty-mist_gradient rounded-lg min-h-[500px]  border border-border;
   }
 
   .work-content {

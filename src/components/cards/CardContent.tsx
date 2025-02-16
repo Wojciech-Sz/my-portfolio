@@ -8,6 +8,7 @@ interface CardContentProps {
     description: string;
     price?: string;
     pricing?: {
+      single: string;
       small: string;
       medium: string;
       large: string;
@@ -23,6 +24,8 @@ interface CardContentProps {
 const CardContent = ({ pkg, text, projectType }: CardContentProps) => {
   const getProjectSize = (projectType: string) => {
     switch (projectType) {
+      case "landing-page":
+        return "single";
       case "launchpad":
         return "small";
       case "momentum":
@@ -32,17 +35,19 @@ const CardContent = ({ pkg, text, projectType }: CardContentProps) => {
       case "ecommerce":
         return "ecommerce";
       default:
-        return "small";
+        return "single";
     }
   };
   return (
     <>
       <div>
         <h4 className={`${text} mb-2 text-2xl font-semibold`}>{pkg.name}</h4>
-        <p className="mb-4 text-accent-foreground">{pkg.description}</p>
+        <p className="mb-4 text-card-foreground">{pkg.description}</p>
       </div>
-      <p className={`${text} mb-4 text-2xl font-bold`}>
-        {pkg.price || pkg.pricing?.[getProjectSize(projectType || "")]}
+      <p className={`mb-4 text-2xl font-bold`}>
+        <span className={`${text}`}>
+          {pkg.price || pkg.pricing?.[getProjectSize(projectType || "")]}
+        </span>
         <span className="text-sm font-normal text-card-foreground">/month</span>
       </p>
       <ul className="mb-8 space-y-3">

@@ -80,12 +80,25 @@ export const packagesSEO = [
 
 export const projectTypes = [
   {
+    id: "landing-page",
+    name: "Landing Page",
+    description:
+      "Single Page Website Package for showcasing a single product, service, or event. Focuses on a concise message and call to action.",
+    features: [
+      "Design & Development of a single-page website.",
+      "Basic on-page SEO optimization.",
+      "Mobile responsive design.",
+      "Contact form integration.",
+    ],
+    price: "$1,500 - $2,500",
+  },
+  {
     id: "launchpad",
     name: "Launchpad",
     description:
-      "Small Website Package or small businesses or individuals needing a fast, SEO-friendly online presence.",
+      "Small Website Package for small businesses or individuals needing a fast, SEO-friendly online presence.",
     features: [
-      "5-page static website (Next.js SSG)",
+      "5-page static website",
       "Basic on-page SEO optimization",
       "Mobile responsive design",
       "Contact form integration",
@@ -98,7 +111,7 @@ export const projectTypes = [
     description:
       "Medium Website Package for businesses wanting a dynamic website with engaging animations.",
     features: [
-      "10-page dynamic website (Next.js SSR)",
+      "10-page dynamic website",
       "Enhanced on-page SEO optimization",
       "Blog setup",
       "Contact form and newsletter signup integration",
@@ -111,7 +124,7 @@ export const projectTypes = [
     description:
       "Large Website/Web Application Package for businesses with complex needs or requiring web application functionality.",
     features: [
-      "10+ page website or web application (Next.js SSR)",
+      "10+ page website or web application",
       "Custom features and functionality",
       "Advanced SEO optimization",
       "Integration with third-party APIs (if required)",
@@ -144,6 +157,7 @@ export const animationPackages = [
       "Simple timeline animations",
     ],
     pricing: {
+      single: "$300 - $500",
       small: "$500 - $800",
       medium: "$800 - $1,500",
       large: "$1,500 - $2,500",
@@ -161,6 +175,7 @@ export const animationPackages = [
       "Some interactive animations",
     ],
     pricing: {
+      single: "$500 - $800",
       small: "$800 - $1,500",
       medium: "$1,500 - $2,500",
       large: "$2,500 - $4,000",
@@ -178,6 +193,7 @@ export const animationPackages = [
       "Interactive animations triggered by user actions",
     ],
     pricing: {
+      single: "$800 - $1,000",
       small: "$1,500 - $2,500",
       medium: "$2,500 - $4,000",
       large: "$4,000 - $7,000+",
@@ -198,6 +214,7 @@ export const threeDPackages = [
       "Limited interactivity",
     ],
     pricing: {
+      single: "$500 - $800",
       small: "$800 - $1,200",
       medium: "$1,200 - $2,000",
       large: "$2,000 - $3,500",
@@ -215,6 +232,7 @@ export const threeDPackages = [
       "Some interactivity (e.g., click to interact)",
     ],
     pricing: {
+      single: "$800 - $1,200",
       small: "$1,200 - $2,000",
       medium: "$2,000 - $3,500",
       large: "$3,500 - $6,000",
@@ -233,6 +251,7 @@ export const threeDPackages = [
       "Sophisticated interactions",
     ],
     pricing: {
+      single: "$1,200 - $2,000",
       small: "$2,000 - $3,500",
       medium: "$3,500 - $6,000",
       large: "$6,000 - $10,000+",

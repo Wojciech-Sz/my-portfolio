@@ -124,7 +124,7 @@ const About = () => {
           <div className="grid-container group">
             <div
               className={
-                "flex h-fit w-full cursor-grab items-center justify-center rounded-3xl sm:h-[326px]"
+                "flex h-fit w-full cursor-grab items-center justify-center rounded-3xl active:cursor-grabbing sm:h-[326px]"
               }
             >
               <DynamicGlobe
