@@ -9,11 +9,16 @@ import { cn } from "@/lib/utils";
 interface Card3DProps {
   children: React.ReactNode;
   className?: string;
+  onMouseDown?: () => void;
 }
 
 gsap.registerPlugin(useGSAP);
 
-const Card3D: React.FC<Card3DProps> = ({ children, className }) => {
+const Card3D: React.FC<Card3DProps> = ({
+  children,
+  className,
+  onMouseDown = () => {},
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const shineRef = useRef<HTMLDivElement>(null);
 
@@ -106,7 +111,11 @@ const Card3D: React.FC<Card3DProps> = ({ children, className }) => {
   return (
     <div
       ref={cardRef}
-      className={cn("card-3d relative cursor-default p-6", className)}
+      onMouseDown={onMouseDown}
+      className={cn(
+        "card-3d relative overflow-hidden rounded-lg border border-border p-8",
+        className
+      )}
     >
       <div
         ref={shineRef}

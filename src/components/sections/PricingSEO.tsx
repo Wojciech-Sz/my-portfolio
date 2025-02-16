@@ -1,52 +1,56 @@
-import { Check } from "lucide-react";
-import React from "react";
+"use client";
+import Link from "next/link";
+import React, { useState } from "react";
 
-import { packages } from "@/constants";
+import { packagesSEO } from "@/constants/pricing";
+import { cn } from "@/lib/utils";
 
 import Card3D from "../cards/Card3D";
+import CardContent from "../cards/CardContent";
 
 const PricingSEO = () => {
+  const [seo, setSeo] = useState("");
+
   return (
-    <section className="mt-12">
-      <h3 className="mb-12 text-center text-2xl font-bold text-accent-foreground sm:text-3xl">
+    <section id="seo" className="flex flex-col items-center gap-6 pt-20">
+      <h3 className="mb-6 text-center text-2xl font-bold text-accent-foreground sm:text-3xl">
         <span className="text-ocean-blue_gradient">SEO</span> Packages
       </h3>
       <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] content-center gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {packages.map((pkg, index) => (
+        {packagesSEO.map((pkg) => (
           <Card3D
-            key={index}
-            className="row-span-4 grid grid-rows-subgrid gap-0 overflow-hidden rounded-lg border border-border p-8"
+            key={pkg.id}
+            onMouseDown={() => setSeo(pkg.id)}
+            className={cn(
+              "row-span-4 grid cursor-pointer grid-rows-subgrid gap-0",
+              seo === pkg.id && "border-[hsl(190,100%,50%)]"
+            )}
           >
-            <div>
-              <h4 className="text-ocean-blue_gradient mb-2 text-2xl font-semibold">
-                {pkg.name}
-              </h4>
-              <p className="mb-4 text-card-foreground">{pkg.description}</p>
-            </div>
-            <p className="mb-4 text-2xl font-bold">
-              {pkg.price}
-              <span className="text-sm font-normal text-card-foreground">
-                /month
-              </span>
-            </p>
-            <ul className="mb-8 space-y-3">
-              {pkg.features.map((feature, featureIndex) => (
-                <li key={featureIndex} className="flex items-center">
-                  <Check className="mr-2 size-5 text-green-500" />
-                  <span className="text-accent-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <div>
-              <p className="mb-6 text-sm text-card-foreground">
-                Ideal for: {pkg.audience}
-              </p>
-              <button className="bg-midnight-ocean_gradient w-full rounded-md py-3 font-semibold text-foreground transition-colors duration-300 hover:bg-primary/90">
-                Get Started
-              </button>
-            </div>
+            <CardContent
+              pkg={pkg}
+              text={
+                seo === pkg.id
+                  ? "text-electric-blue_gradient"
+                  : "text-ocean-blue_gradient"
+              }
+            />
           </Card3D>
         ))}
+      </div>
+      <div className="flex gap-6">
+        <button
+          onMouseDown={() => setSeo("")}
+          className={`bg-destructive_gradient w-max rounded-md px-6 py-3 font-semibold text-foreground`}
+        >
+          Reset
+        </button>
+        <button
+          className={`bg-midnight-ocean_gradient w-max rounded-md px-6 py-3 font-semibold text-foreground`}
+        >
+          <Link scroll href="/#contact">
+            Contact
+          </Link>
+        </button>
       </div>
     </section>
   );

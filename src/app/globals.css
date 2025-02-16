@@ -92,11 +92,11 @@
 
 @layer utilities {
   .c-space {
-    @apply sm:px-10 px-5;
+    @apply sm:px-10  px-5;
   }
 
   .head-text {
-    @apply sm:text-4xl text-3xl font-semibold text-neon-accent_gradient;
+    @apply sm:text-4xl text-3xl font-semibold text-foreground;
   }
 
   /* Navigation */

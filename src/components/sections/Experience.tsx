@@ -13,7 +13,7 @@ const Experience = () => {
   const [animation, setAnimation] = useState("idle");
 
   return (
-    <section id="work" className="c-space py-20">
+    <section id="experience" className="c-space py-20">
       <div className="w-full text-card-foreground">
         <h2 className="head-text">
           My Work <span className="text-cosmic-blue_gradient">Experience</span>
