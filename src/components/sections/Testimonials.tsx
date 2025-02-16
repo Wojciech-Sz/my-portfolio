@@ -13,10 +13,10 @@ const Testimonials = () => {
       <div className="client-container">
         {clientReviews.map(({ id, name, review, position, img }) => (
           <div key={id} className="client-review group">
-            <p className="font-light text-foreground transition-all group-hover:translate-x-2">
+            <p className="font-light text-foreground transition-all duration-200 group-hover:translate-x-2">
               {review}
             </p>
-            <div className="client-content transition-all group-hover:translate-x-2">
+            <div className="client-content transition-all duration-200 group-hover:translate-x-2">
               <div className="flex gap-3">
                 <Image
                   src={img}

@@ -140,11 +140,11 @@
 
   /* about section */
   .grid-container {
-    @apply w-full h-full bg-frosty-mist_gradient border border-border rounded-lg sm:p-7 p-4 flex flex-col gap-5 hover:border-primary transition-all;
+    @apply w-full h-full bg-frosty-mist_gradient border border-border rounded-lg sm:p-7 p-4 flex flex-col gap-5 hover:border-primary transition-all duration-300;
   }
 
   .grid-header {
-    @apply text-xl transition-all group-hover:text-primary font-semibold mb-2 text-foreground font-sans;
+    @apply text-xl transition-all group-hover:text-primary font-semibold mb-2 text-foreground font-sans duration-300;
   }
 
   .grid-subtext {
@@ -157,7 +157,7 @@
 
   /* projects section  */
   .arrow-btn {
-    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;
+    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full;
   }
 
   .tech-logo {
@@ -366,7 +366,7 @@
 }
 
 .shine {
-  @apply bg-[40%_40%] bg-[length:200%_200%];
+  @apply bg-[30%_30%] bg-[length:200%_200%];
 }
 
 .waving-hand {
@@ -384,6 +384,16 @@
     rgba(255, 255, 255, 0.000025) 50%,
     rgba(255, 255, 255, 0.000025) 50%,
     rgba(255, 255, 255, 0.025) 100%
+  );
+}
+
+.arrow-gradient2 {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.025) 10%,
+    rgba(255, 255, 255, 0.000025) 50%,
+    rgba(255, 255, 255, 0.000025) 50%,
+    rgba(255, 255, 255, 0.1) 100%
   );
 }
 

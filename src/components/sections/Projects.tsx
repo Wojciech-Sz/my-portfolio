@@ -97,13 +97,13 @@ const Projects = () => {
 
           <div className="mt-7 flex items-center justify-between">
             <button
-              className="arrow-btn"
+              className="arrow-btn arrow-gradient"
               onClick={() => handleNavigation("prev")}
             >
               <ArrowLeft size={20} color="white" />
             </button>
             <button
-              className="arrow-btn"
+              className="arrow-btn arrow-gradient2"
               onClick={() => handleNavigation("next")}
             >
               <ArrowRight size={20} color="white" />
@@ -113,7 +113,7 @@ const Projects = () => {
 
         <div
           className={
-            "bg-frosty-mist_gradient h-96 rounded-lg border border-border md:h-full"
+            "bg-frosty-mist_gradient h-96 overflow-hidden rounded-lg border border-border md:h-full"
           }
         >
           <Canvas className="size-full" style={{ minHeight: "300px" }}>

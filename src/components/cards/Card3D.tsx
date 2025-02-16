@@ -31,15 +31,15 @@ const Card3D: React.FC<Card3DProps> = ({ children, className }) => {
         const mouseY = e.clientY - centerY;
 
         const rotationX = gsap.utils.mapRange(
-          -height / 2,
-          height / 2,
+          -height / 1,
+          height / 1,
           5,
           -5,
           mouseY
         );
         const rotationY = gsap.utils.mapRange(
-          -width / 2,
-          width / 2,
+          -width / 1,
+          width / 1,
           -5,
           5,
           mouseX
@@ -47,14 +47,14 @@ const Card3D: React.FC<Card3DProps> = ({ children, className }) => {
 
         const shineX = gsap.utils.mapRange(
           -width / 2,
-          width / 2,
+          width / 1,
           0,
           100,
           mouseX
         );
         const shineY = gsap.utils.mapRange(
           -height / 2,
-          height / 2,
+          height / 1,
           0,
           100,
           mouseY
@@ -85,7 +85,7 @@ const Card3D: React.FC<Card3DProps> = ({ children, className }) => {
         });
 
         gsap.to(shine, {
-          backgroundPosition: "40% 40%",
+          backgroundPosition: "30% 30%",
           ease: "power2.out",
           duration: 0.3,
         });
