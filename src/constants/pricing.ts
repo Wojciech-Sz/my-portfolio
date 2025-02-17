@@ -1,10 +1,10 @@
 export const packagesSEO = [
   {
-    id: "basic",
     name: "Basic",
     description:
-      "For small businesses with limited budgets or those new to SEO.",
+      "For small businesses with limited budgets or those new to SEO",
     price: "$500 - $1,500",
+    per: "/month",
     features: [
       "Keyword research and analysis",
       "On-page optimization",
@@ -15,11 +15,11 @@ export const packagesSEO = [
     audience: "Small businesses",
   },
   {
-    id: "standard",
     name: "Standard",
     description:
-      "For businesses looking to improve their organic search presence.",
+      "For businesses looking to improve their organic search presence",
     price: "$1,500 - $5,000",
+    per: "/month",
     features: [
       "Everything in Basic package",
       "Content marketing",
@@ -31,11 +31,11 @@ export const packagesSEO = [
     audience: "Growing businesses",
   },
   {
-    id: "advanced",
     name: "Advanced",
     description:
-      "For businesses with aggressive growth goals and a strong focus on organic search.",
+      "For businesses with aggressive growth goals and a strong focus on organic search",
     price: "$5,000+",
+    per: "/month",
     features: [
       "Everything in Standard package",
       "In-depth keyword research",
@@ -47,11 +47,11 @@ export const packagesSEO = [
     audience: "Established businesses",
   },
   {
-    id: "ecommerce",
     name: "E-commerce",
     description:
-      "For online stores looking to increase product visibility and sales.",
+      "For online stores looking to increase product visibility and sales",
     price: "$1,500 - $10,000+",
+    per: "/month",
     features: [
       "Product page keyword research",
       "On-page product optimization",
@@ -63,10 +63,10 @@ export const packagesSEO = [
     audience: "Online stores",
   },
   {
-    id: "local",
     name: "Local",
-    description: "For businesses targeting local customers.",
+    description: "For businesses targeting local customers",
     price: "$500 - $2,000+",
+    per: "/month",
     features: [
       "Google My Business optimization",
       "Local citation building",
@@ -80,23 +80,23 @@ export const packagesSEO = [
 
 export const projectTypes = [
   {
-    id: "landing-page",
     name: "Landing Page",
     description:
-      "Single Page Website Package for showcasing a single product, service, or event. Focuses on a concise message and call to action.",
+      "Single Page Website Package for showcasing a single product, service, or event",
     features: [
-      "Design & Development of a single-page website.",
-      "Basic on-page SEO optimization.",
-      "Mobile responsive design.",
-      "Contact form integration.",
+      "Design & Development of a single-page website",
+      "Basic on-page SEO optimization",
+      "Mobile responsive design",
+      "Contact form integration",
     ],
     price: "$1,500 - $2,500",
+    per: "/project",
   },
+
   {
-    id: "launchpad",
     name: "Launchpad",
     description:
-      "Small Website Package for small businesses or individuals needing a fast, SEO-friendly online presence.",
+      "Small Website Package for small businesses or individuals needing a fast, SEO-friendly online presence",
     features: [
       "5-page static website",
       "Basic on-page SEO optimization",
@@ -104,12 +104,13 @@ export const projectTypes = [
       "Contact form integration",
     ],
     price: "$2,500 - $3,500",
+    per: "/project",
   },
+
   {
-    id: "momentum",
     name: "Momentum",
     description:
-      "Medium Website Package for businesses wanting a dynamic website with engaging animations.",
+      "Medium Website Package for businesses wanting a dynamic SEO-ready website",
     features: [
       "10-page dynamic website",
       "Enhanced on-page SEO optimization",
@@ -117,12 +118,13 @@ export const projectTypes = [
       "Contact form and newsletter signup integration",
     ],
     price: "$5,000 - $7,000",
+    per: "/project",
   },
+
   {
-    id: "ascend",
     name: "Ascend",
     description:
-      "Large Website/Web Application Package for businesses with complex needs or requiring web application functionality.",
+      "Large Website/Web Application Package for businesses with complex needs or requiring web application functionality",
     features: [
       "10+ page website or web application",
       "Custom features and functionality",
@@ -130,12 +132,13 @@ export const projectTypes = [
       "Integration with third-party APIs (if required)",
     ],
     price: "$8,000 - $15,000+",
+    per: "/project",
   },
+
   {
-    id: "ecommerce",
     name: "E-commerce Starter",
     description:
-      "E-commerce Package. Get your online store up and running with essential e-commerce features.",
+      "E-commerce Package Get your online store up and running with essential e-commerce features",
     features: [
       "E-commerce platform setup",
       "Product catalog setup",
@@ -143,119 +146,126 @@ export const projectTypes = [
       "Payment gateway integration",
     ],
     price: "$4,000 - $8,000+",
+    per: "/project",
   },
 ];
 
 export const animationPackages = [
   {
-    id: "spark",
-    name: "Spark",
+    name: "Simple",
     description:
-      "Simple Animation Package. Add subtle yet effective animations to enhance user experience.",
+      "Add subtle yet effective animations to enhance user experience",
     features: [
       "Basic transitions, fades, hovers",
       "Simple timeline animations",
     ],
-    pricing: {
-      single: "$300 - $500",
-      small: "$500 - $800",
-      medium: "$800 - $1,500",
-      large: "$1,500 - $2,500",
-      ecommerce: "$700 - $1,200",
-    },
+    price: "$50 - $100",
+    per: "/element",
   },
   {
-    id: "ignite",
-    name: "Ignite",
+    name: "Moderate",
     description:
-      "Moderate Animation Package. Create more engaging and interactive experiences with complex animations.",
+      "Create more engaging and interactive experiences with complex animations",
     features: [
       "Complex sequenced animations",
       "Coordinated timelines",
       "Some interactive animations",
     ],
-    pricing: {
-      single: "$500 - $800",
-      small: "$800 - $1,500",
-      medium: "$1,500 - $2,500",
-      large: "$2,500 - $4,000",
-      ecommerce: "$1,200 - $2,000",
-    },
+    price: "$100 - $200",
+    per: "/element",
   },
   {
-    id: "blaze",
-    name: "Blaze",
+    name: "Complex ",
     description:
-      "Advanced Animation Package. Highly customized, performant animations for a truly unique and interactive website.",
+      "Highly customized, performant animations for a truly unique and interactive website",
     features: [
       "Highly customized, performant animations",
       "Complex timelines",
       "Interactive animations triggered by user actions",
+      "Custom scroll-triggered animations",
+      "advanced UI interactions",
     ],
-    pricing: {
-      single: "$800 - $1,000",
-      small: "$1,500 - $2,500",
-      medium: "$2,500 - $4,000",
-      large: "$4,000 - $7,000+",
-      ecommerce: "$2,000 - $3,500+",
-    },
+    price: "$200 - $400+",
+    per: "/element",
   },
 ];
 
 export const threeDPackages = [
   {
-    id: "dimension",
-    name: "Dimension",
+    name: "Simple",
     description:
-      "Simple 3D Integration Package. Add a touch of 3D to your website with basic model integration.",
+      "Add a touch of 3D to your website with basic model integration",
     features: [
-      "Adding a pre-existing 3D model",
+      "Adding simple pre-existing 3D model",
       "Basic rotation or animation",
       "Limited interactivity",
     ],
-    pricing: {
-      single: "$500 - $800",
-      small: "$800 - $1,200",
-      medium: "$1,200 - $2,000",
-      large: "$2,000 - $3,500",
-      ecommerce: "$1,000 - $1,800",
-    },
+    price: "$100 - $200",
+    per: "/object",
   },
   {
-    id: "perspective",
-    name: "Perspective",
+    name: "Moderate",
     description:
-      "Moderate 3D Integration Package. Create more engaging 3D experiences with multiple models and interactivity.",
+      "Create more engaging experiences with moderate 3D models and interactivity",
     features: [
-      "Integrating multiple 3D models",
+      "Integrating moderate 3D models",
       "Basic scene setup",
-      "Some interactivity (e.g., click to interact)",
+      "Some interactivity (eg, click to interact)",
     ],
-    pricing: {
-      single: "$800 - $1,200",
-      small: "$1,200 - $2,000",
-      medium: "$2,000 - $3,500",
-      large: "$3,500 - $6,000",
-      ecommerce: "$1,800 - $3,000",
-    },
+    price: "$200 - $400",
+    per: "/object",
   },
   {
-    id: "immersion",
-    name: "Immersion",
-    description:
-      "Complex 3D Integration Package. Develop highly interactive and immersive 3D experiences.",
+    name: "Complex",
+    description: "Develop highly interactive and immersive 3D experiences",
     features: [
       "Complex 3D scenes",
-      "Multiple models",
       "Advanced lighting and effects",
       "Sophisticated interactions",
     ],
-    pricing: {
-      single: "$1,200 - $2,000",
-      small: "$2,000 - $3,500",
-      medium: "$3,500 - $6,000",
-      large: "$6,000 - $10,000+",
-      ecommerce: "$3,000 - $5,000+",
-    },
+    price: "$400 - $800+",
+    per: "/object",
+  },
+];
+
+export const hostingPackages = [
+  {
+    name: "Basic",
+    description: "Simple and affordable hosting for websites with low traffic",
+    features: ["Basic uptime monitoring", "No database management"],
+    price: "$50 - $100",
+    per: "/month",
+    audience: "Single-page websites or small static sites",
+  },
+  {
+    name: "Standard",
+    description:
+      "Reliable hosting for websites with medium traffic and simple database integration",
+    features: [
+      "Basic website maintenance",
+      "Basic technical support",
+      "Security patches",
+      "Basic database management",
+      "CMS updates",
+    ],
+    audience: "Small to medium-sized websites",
+    price: "$100 - $250",
+    per: "/month",
+  },
+  {
+    name: "Premium",
+    description:
+      "High-performance hosting for websites with high traffic and complex database",
+    features: [
+      "Advanced website maintenance",
+      "Performance optimization",
+      "Advanced database management",
+      "Priority support",
+      "Enhanced security features",
+    ],
+    audience:
+      "large websites, e-commerce stores, or web applications requiring high availability and performance",
+    price: "$250 - $500+",
+    per: "/month",
   },
 ];
