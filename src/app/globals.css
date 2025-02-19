@@ -101,19 +101,19 @@
 
   /* Navigation */
   .nav-ul {
-    @apply flex flex-col items-center gap-4 md:flex-row md:gap-6 relative z-20;
+    @apply flex flex-col items-center gap-4 lg:flex-row lg:gap-6 relative z-20;
   }
 
   .nav-li {
-    @apply text-card-foreground hover:text-foreground font-sans max-md:hover:bg-secondary max-md:w-full max-md:rounded-md py-2 max-md:px-5;
+    @apply text-card-foreground hover:text-foreground font-sans max-lg:hover:bg-secondary max-lg:w-full max-lg:rounded-lg py-2 max-lg:px-5;
   }
 
   .nav-li_a {
-    @apply text-lg md:text-base hover:text-foreground transition-colors;
+    @apply text-lg lg:text-base hover:text-foreground transition-colors;
   }
 
   .nav-sidebar {
-    @apply absolute left-0 right-0 bg-card backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto md:hidden block;
+    @apply absolute left-0 right-0 bg-frosty-mist_gradient backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto lg:hidden block;
   }
 
   .text-gray_gradient {
@@ -183,11 +183,11 @@
   }
 
   .work-canvas {
-    @apply col-span-1 cursor-grab active:cursor-grabbing bg-frosty-mist_gradient rounded-lg min-h-[500px]  border border-border;
+    @apply cursor-grab active:cursor-grabbing bg-frosty-mist_gradient rounded-lg min-h-[500px] border border-border;
   }
 
   .work-content {
-    @apply col-span-2 bg-frosty-mist_gradient rounded-lg border border-border;
+    @apply lg:col-span-2 col-span-1 bg-frosty-mist_gradient rounded-lg border border-border;
   }
 
   .work-content_container {

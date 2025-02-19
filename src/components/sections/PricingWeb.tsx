@@ -18,7 +18,7 @@ const PricingSection = () => {
         <span className="text-gentle-blue_gradient">WEB</span> Packages
       </h3>
       <Tabs defaultValue="project-type">
-        <TabsList className="mb-6 grid w-full grid-cols-4 gap-2">
+        <TabsList className="mb-6 grid w-full grid-cols-4 text-sm sm:gap-2">
           <TabsTrigger value="project-type">Project Type</TabsTrigger>
           <TabsTrigger value="animations">Animations</TabsTrigger>
           <TabsTrigger value="3d-integration">3D Integration</TabsTrigger>

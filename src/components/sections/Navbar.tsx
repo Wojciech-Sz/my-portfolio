@@ -64,7 +64,7 @@ const Navbar = () => {
   });
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-background/90">
+    <header className="fixed  inset-x-0 top-0 z-50 bg-background/90">
       <div className="mx-auto max-w-7xl">
         <div className="c-space mx-auto flex items-center justify-between py-5">
           <Link
@@ -75,7 +75,7 @@ const Navbar = () => {
             Wojtek
           </Link>
           <button
-            className="flex text-card-foreground transition-colors hover:text-foreground focus:outline-none md:hidden"
+            className="flex text-card-foreground transition-colors hover:text-foreground focus:outline-none lg:hidden"
             aria-label="Toggle Menu"
             onClick={() => toggleMenu()}
           >
@@ -87,7 +87,7 @@ const Navbar = () => {
             />
           </button>
 
-          <nav className="hidden md:flex">
+          <nav className="hidden lg:flex">
             <NavItems />
           </nav>
         </div>
