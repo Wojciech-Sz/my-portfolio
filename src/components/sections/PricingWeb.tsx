@@ -25,7 +25,7 @@ const PricingSection = () => {
           <TabsTrigger value="hosting">Hosting</TabsTrigger>
         </TabsList>
         <TabsContent value="project-type">
-          <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] content-center gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] gap-6 md:grid-cols-2 xl:grid-cols-3">
             {projectTypes.map((type) => (
               <Card3D
                 key={type.name}
@@ -39,7 +39,7 @@ const PricingSection = () => {
           </div>
         </TabsContent>
         <TabsContent value="animations">
-          <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] content-center gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] gap-6 md:grid-cols-2 xl:grid-cols-3">
             {animationPackages.map((pkg) => (
               <Card3D
                 key={pkg.name}
@@ -53,7 +53,7 @@ const PricingSection = () => {
           </div>
         </TabsContent>
         <TabsContent value="3d-integration">
-          <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] content-center gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] gap-6 md:grid-cols-2 xl:grid-cols-3">
             {threeDPackages.map((pkg) => (
               <Card3D
                 key={pkg.name}
@@ -67,7 +67,7 @@ const PricingSection = () => {
           </div>
         </TabsContent>
         <TabsContent value="hosting">
-          <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] content-center gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] gap-6 md:grid-cols-2 xl:grid-cols-3">
             {hostingPackages.map((pkg) => (
               <Card3D
                 key={pkg.name}

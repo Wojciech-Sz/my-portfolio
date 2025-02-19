@@ -9,15 +9,15 @@ import CardContent from "../cards/CardContent";
 const PricingSEO = () => {
   return (
     <section id="seo" className="flex flex-col items-center gap-6 pt-20">
-      <h3 className="mb-6 text-center text-2xl font-bold text-accent-foreground sm:text-3xl">
+      <h3 className="text-center text-2xl font-bold text-accent-foreground sm:text-3xl">
         <span className="text-gentle-blue_gradient">SEO</span> Packages
       </h3>
-      <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] content-center gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-6 md:grid-cols-2 xl:grid-cols-3">
         {packagesSEO.map((pkg) => (
           <Card3D
             key={pkg.name}
             className={
-              "group row-span-4 grid cursor-default grid-rows-subgrid gap-0 transition-all hover:border-[hsl(190,100%,50%)]"
+              "group row-span-4 grid cursor-default grid-rows-subgrid gap-0 hover:border-[hsl(190,100%,50%)]"
             }
           >
             <CardContent pkg={pkg} />

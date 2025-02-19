@@ -9,8 +9,8 @@ const Services = () => {
       <h2 className="head-text">
         My <span className="text-cosmic-blue_gradient">Services</span>
       </h2>
-      <PricingSEO />
       <PricingWeb />
+      <PricingSEO />
     </section>
   );
 };

@@ -33,7 +33,7 @@ const CardContent = ({ pkg }: CardContentProps) => {
           {pkg.per}
         </span>
       </p>
-      <ul className="mb-8 space-y-3">
+      <ul className="mb-6 space-y-3">
         {pkg.features.map((feature) => (
           <li key={feature} className="flex items-center">
             <Check className="mr-2 size-5 text-green-500" />
