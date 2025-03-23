@@ -82,7 +82,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-deep-space_gradient bg-fixed text-foreground;
+    @apply bg-deep-space_gradient min-h-screen bg-fixed text-foreground;
   }
 }
 
@@ -234,7 +234,7 @@
 @layer utilities {
   /* Dark theme gradients */
   .bg-deep-space_gradient {
-    @apply bg-gradient-to-br from-[hsl(240,50%,1%)] to-[hsl(240,50%,10%)];
+    @apply bg-gradient-to-br from-[hsl(240,50%,1%)] to-[hsl(240,49%,10%)];
   }
 
   .bg-cosmic-blue_gradient {
