@@ -116,6 +116,10 @@
     @apply absolute left-0 right-0 bg-frosty-mist_gradient backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto lg:hidden block;
   }
 
+  .underline {
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full;
+  }
+
   .text-gray_gradient {
     @apply bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
   }

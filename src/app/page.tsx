@@ -8,7 +8,7 @@ import Testimonials from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
-    <>
+    <main className="relative mx-auto max-w-7xl">
       <Hero />
       <About />
       <Projects />
@@ -16,6 +16,6 @@ export default function Home() {
       <Experience />
       <Services />
       <Contact />
-    </>
+    </main>
   );
 }

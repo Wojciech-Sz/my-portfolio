@@ -33,11 +33,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} dark font-sans font-bold antialiased`}
       >
-        <main className="relative mx-auto max-w-7xl">
-          <Navbar />
-          {children}
-          <Footer />
-        </main>
+        <Navbar />
+        {children}
+        <Footer />
         <Toaster />
       </body>
     </html>

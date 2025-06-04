@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { Float, useGLTF, useTexture } from "@react-three/drei";
 import gsap from "gsap";
 import { useRef, useState } from "react";
+import { Mesh } from "three";
 
 gsap.registerPlugin(useGSAP);
 const Cube = ({ ...props }) => {
@@ -13,7 +14,7 @@ const Cube = ({ ...props }) => {
 
   const texture = useTexture("textures/cube.png");
 
-  const cubeRef = useRef(null);
+  const cubeRef = useRef<Mesh>(null!);
   const [hovered, setHovered] = useState(false);
 
   useGSAP(() => {

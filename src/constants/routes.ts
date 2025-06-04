@@ -1,9 +1,8 @@
 export const ROUTES = [
-  { href: "/#home", name: "Home" },
-  { href: "/#about", name: "About" },
-  { href: "/#projects", name: "Projects" },
-  { href: "/#testimonials", name: "Testimonials" },
-  { href: "/#experience", name: "Experience" },
-  { href: "/#services", name: "Services" },
-  { href: "/#contact", name: "Contact" },
+  { link: "/#home", name: "Home" },
+  { link: "/#about", name: "About" },
+  { link: "/#projects", name: "Projects" },
+  { link: "/#testimonials", name: "Testimonials" },
+  { link: "/#experience", name: "Experience" },
+  { link: "/#services", name: "Services" },
 ];
