@@ -28,7 +28,7 @@ const Projects = () => {
     <section id="projects" className="c-space py-20">
       <h2 className="head-text">
         A small selection of{" "}
-        <span className="text-cosmic-blue_gradient">Recent Projects</span>
+        <span className="text-gradient-red-wine">Recent Projects</span>
       </h2>
       <div className="mt-12 grid w-full grid-cols-1 gap-5 lg:grid-cols-2">
         <div

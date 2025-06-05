@@ -30,12 +30,12 @@ const Hero = () => {
     >
       <div className="c-space mx-auto mt-20 flex w-full flex-col gap-3 sm:mt-28">
         <h1 className="text-center font-sans text-2xl font-medium text-foreground md:text-3xl">
-          Hi, I am <span className="text-cosmic-blue_gradient">Wojtek</span>{" "}
+          Hi, I am <span className="text-gradient-red-wine">Wojtek</span>{" "}
           <span className="waving-hand">👋</span>
           <br />
           Next.js Developer and SEO based in Poland
         </h1>
-        <p className="hero_tag text-cosmic-blue_gradient">
+        <p className="hero_tag text-gradient-red-wine">
           Building Products & Brands
         </p>
       </div>

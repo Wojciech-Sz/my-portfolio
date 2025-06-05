@@ -1,357 +1,489 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-inter: var(--font-inter);
+  --font-space-grotesk: var(--font-space-grotesk);
+
+  --breakpoint-xs: 30rem;
+}
+
+:root {
+  --radius: 0.65rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.637 0.237 25.331);
+  --primary-foreground: oklch(0.971 0.013 17.38);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.637 0.237 25.331);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.637 0.237 25.331);
+  --sidebar-primary-foreground: oklch(0.971 0.013 17.38);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.637 0.237 25.331);
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.637 0.237 25.331);
+  --primary-foreground: oklch(0.971 0.013 17.38);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.637 0.237 25.331);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.637 0.237 25.331);
+  --sidebar-primary-foreground: oklch(0.971 0.013 17.38);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.637 0.237 25.331);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
-  @layer base {
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 0 0% 3.9%;
-      --card: 0 0% 100%;
-      --card-foreground: 0 0% 3.9%;
-      --popover: 0 0% 100%;
-      --popover-foreground: 0 0% 3.9%;
-      --primary: 0 72.2% 50.6%;
-      --primary-foreground: 0 85.7% 97.3%;
-      --secondary: 0 0% 96.1%;
-      --secondary-foreground: 0 0% 9%;
-      --muted: 0 0% 96.1%;
-      --muted-foreground: 0 0% 45.1%;
-      --accent: 0 0% 96.1%;
-      --accent-foreground: 0 0% 9%;
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 0 0% 98%;
-      --border: 0 0% 89.8%;
-      --input: 0 0% 89.8%;
-      --ring: 0 72.2% 50.6%;
-      --radius: 0.65rem;
-      --chart-1: 12 76% 61%;
-      --chart-2: 173 58% 39%;
-      --chart-3: 197 37% 24%;
-      --chart-4: 43 74% 66%;
-      --chart-5: 27 87% 67%;
-    }
-
-    .dark {
-      --background: 0 0% 3.9%;
-      --foreground: 0 0% 98%;
-      --card: 0 0% 3.9%;
-      --card-foreground: 0 0% 98%;
-      --popover: 0 0% 3.9%;
-      --popover-foreground: 0 0% 98%;
-      --primary: 0 72.2% 50.6%;
-      --primary-foreground: 0 85.7% 97.3%;
-      --secondary: 0 0% 14.9%;
-      --secondary-foreground: 0 0% 98%;
-      --muted: 0 0% 14.9%;
-      --muted-foreground: 0 0% 63.9%;
-      --accent: 0 0% 14.9%;
-      --accent-foreground: 0 0% 98%;
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 0 0% 98%;
-      --border: 0 0% 14.9%;
-      --input: 0 0% 14.9%;
-      --ring: 0 72.2% 50.6%;
-      --chart-1: 220 70% 50%;
-      --chart-2: 160 60% 45%;
-      --chart-3: 30 80% 55%;
-      --chart-4: 280 65% 60%;
-      --chart-5: 340 75% 55%;
-    }
-  }
-
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background min-h-screen bg-fixed text-foreground;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
 
-* {
-  scroll-behavior: smooth;
+@utility c-space {
+  @apply sm:px-10  px-6;
 }
 
-@layer utilities {
-  .c-space {
-    @apply sm:px-10  px-6;
-  }
+@utility head-text {
+  @apply sm:text-4xl text-3xl font-semibold text-foreground;
+}
 
-  .head-text {
-    @apply sm:text-4xl text-3xl font-semibold text-foreground;
-  }
-
+@utility nav-ul {
   /* Navigation */
-  .nav-ul {
-    @apply flex flex-col items-center gap-4 lg:flex-row lg:gap-6 relative z-20;
-  }
+  @apply flex flex-col items-center gap-4 lg:flex-row lg:gap-6 relative z-20;
+}
 
-  .nav-li {
-    @apply text-card-foreground hover:text-foreground font-sans max-lg:hover:bg-secondary max-lg:w-full max-lg:rounded-lg py-2 max-lg:px-5;
-  }
+@utility nav-li {
+  @apply text-card-foreground hover:text-foreground font-sans max-lg:hover:bg-secondary max-lg:w-full max-lg:rounded-lg py-2 max-lg:px-5;
+}
 
-  .nav-li_a {
-    @apply text-lg lg:text-base hover:text-foreground transition-colors;
-  }
+@utility nav-li_a {
+  @apply text-lg lg:text-base hover:text-foreground transition-colors;
+}
 
-  .nav-sidebar {
-    @apply absolute left-0 right-0 bg-frosty-mist_gradient backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto lg:hidden block;
-  }
+@utility nav-sidebar {
+  @apply absolute left-0 right-0 bg-frosty-mist_gradient backdrop-blur-xs transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto lg:hidden block;
+}
 
-  .underline {
-    @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full;
-  }
+@utility underline {
+  @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full;
+}
 
-  .text-gray_gradient {
-    @apply bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
-  }
+@utility text-gray_gradient {
+  @apply bg-linear-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
+}
 
+@utility btn {
   /* button component */
-  .btn {
-    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-border  transition-all active:scale-95 text-foreground mx-auto;
-  }
+  @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-border  transition-all active:scale-95 text-foreground mx-auto;
+}
 
-  .btn-ping {
-    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75;
-  }
+@utility btn-ping {
+  @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75;
+}
 
-  .btn-ping_dot {
-    @apply relative inline-flex rounded-full h-3 w-3 bg-green-500;
-  }
+@utility btn-ping_dot {
+  @apply relative inline-flex rounded-full h-3 w-3 bg-green-500;
+}
 
+@utility hero_tag {
   /* hero section */
-  .hero_tag {
-    @apply text-center xl:text-6xl md:text-4xl text-3xl font-sans font-black !leading-normal;
-  }
+  @apply text-center xl:text-6xl md:text-4xl text-3xl font-sans font-black leading-normal!;
+}
 
+@utility grid-container {
   /* about section */
-  .grid-container {
-    @apply w-full h-full bg-frosty-mist_gradient border border-border rounded-lg sm:p-7 p-4 flex flex-col gap-5 hover:border-primary transition-all;
-  }
+  @apply w-full h-full bg-frosty-mist_gradient border border-border rounded-lg sm:p-7 p-4 flex flex-col gap-5 hover:border-primary transition-all;
+}
 
-  .grid-header {
-    @apply text-xl transition-all group-hover:text-primary font-semibold mb-2 text-foreground font-sans;
-  }
+@utility grid-header {
+  @apply text-xl transition-all group-hover:text-primary font-semibold mb-2 text-foreground font-sans;
+}
 
-  .grid-subtext {
-    @apply text-card-foreground text-base font-sans;
-  }
+@utility grid-subtext {
+  @apply text-card-foreground text-base font-sans;
+}
 
-  .copy-container {
-    @apply cursor-pointer flex justify-center items-center gap-2;
-  }
+@utility copy-container {
+  @apply cursor-pointer flex justify-center items-center gap-2;
+}
 
+@utility arrow-btn {
   /* projects section  */
-  .arrow-btn {
-    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full;
-  }
+  @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full;
+}
 
-  .tech-logo {
-    @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
-  }
+@utility tech-logo {
+  @apply w-10 h-10 rounded-md p-2 bg-neutral-100/10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
+}
 
+@utility client-container {
   /* clients section */
-  .client-container {
-    @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
-  }
+  @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
+}
 
-  .client-review {
-    @apply rounded-lg md:p-10 p-5 bg-frosty-mist_gradient grid gap-10 grid-rows-subgrid row-span-2 border border-border;
-  }
+@utility client-review {
+  @apply rounded-lg md:p-10 p-5 bg-frosty-mist_gradient grid gap-10 grid-rows-subgrid row-span-2 border border-border;
+}
 
-  .client-content {
-    @apply flex lg:flex-row flex-col justify-between gap-5;
-  }
+@utility client-content {
+  @apply flex lg:flex-row flex-col justify-between gap-5;
+}
 
+@utility work-container {
   /*  work experience section */
-  .work-container {
-    @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12 rounded-lg;
-  }
+  @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12 rounded-lg;
+}
 
-  .work-canvas {
-    @apply cursor-grab active:cursor-grabbing bg-frosty-mist_gradient rounded-lg min-h-[500px] border border-border;
-  }
+@utility work-canvas {
+  @apply cursor-grab active:cursor-grabbing bg-frosty-mist_gradient rounded-lg min-h-[500px] border border-border;
+}
 
-  .work-content {
-    @apply lg:col-span-2 col-span-1 bg-frosty-mist_gradient rounded-lg border border-border;
-  }
+@utility work-content {
+  @apply lg:col-span-2 col-span-1 bg-frosty-mist_gradient rounded-lg border border-border;
+}
 
-  .work-content_container {
-    @apply grid grid-cols-[auto_1fr] items-start gap-5 transition-all ease-in-out duration-500 cursor-pointer hover:bg-border rounded-lg sm:px-5 px-2.5;
-  }
+@utility work-content_container {
+  @apply grid grid-cols-[auto_1fr] items-start gap-5 transition-all ease-in-out duration-500 cursor-pointer hover:bg-border rounded-lg sm:px-5 px-2.5;
+}
 
-  .work-content_logo {
-    @apply rounded-3xl w-16 h-16 p-2 bg-accent;
-  }
+@utility work-content_logo {
+  @apply rounded-3xl w-16 h-16 p-2 bg-accent;
+}
 
-  .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-border group-hover:bg-secondary group-last:hidden;
-  }
+@utility work-content_bar {
+  @apply flex-1 w-0.5 mt-4 h-full bg-border group-hover:bg-secondary group-last:hidden;
+}
 
+@utility contact-container {
   /* contact section */
-  .contact-container {
-    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
-  }
+  @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
+}
 
-  .field-label {
-    @apply text-lg text-card-foreground;
-  }
+@utility field-label {
+  @apply text-lg text-card-foreground;
+}
 
-  .field-input {
-    @apply w-full bg-border px-5 py-2 min-h-14 rounded-lg placeholder:font-light 
-     placeholder:text-lg placeholder:!text-accent-foreground text-lg text-accent-foreground shadow-card shadow-2xl focus:outline-none;
-  }
+@utility field-input {
+  @apply w-full bg-border px-5 py-2 min-h-14 rounded-lg placeholder:font-light 
+     placeholder:text-lg placeholder:text-accent-foreground! text-lg text-accent-foreground shadow-card shadow-2xl focus:outline-hidden;
+}
 
-  .field-btn {
-    @apply bg-secondary hover:!bg-secondary/90 px-5 py-2 min-h-12 rounded-lg shadow-card shadow-2xl flex justify-center items-center text-lg text-secondary-foreground gap-3;
-  }
+@utility field-btn {
+  @apply bg-gradient-red-wine px-5 py-2 min-h-12 rounded-lg flex justify-center items-center text-lg text-secondary-foreground gap-3;
+}
 
-  .field-btn_arrow {
-    @apply w-2.5 h-2.5 object-contain invert brightness-0;
-  }
+@utility field-btn_arrow {
+  @apply w-2.5 h-2.5 object-contain invert brightness-0;
+}
 
+@utility social-icon {
   /*  footer */
-  .social-icon {
-    @apply w-12 h-12 rounded-full flex justify-center items-center bg-border border border-card;
-  }
+  @apply w-12 h-12 rounded-full flex justify-center items-center bg-border border border-card;
 }
 
 /* Gradients */
-@layer utilities {
+@utility bg-twilight_gradient {
   /* Dark theme gradients */
-
-  .bg-twilight_gradient {
-    @apply bg-[linear-gradient(135deg,hsl(240,11%,26%),hsl(240,7%,6%),hsl(240,50%,1%))];
-  }
-
-  .bg-frosty-mist_gradient {
-    @apply bg-gradient-to-b from-[hsla(240,8%,12%,0.8)] to-[hsla(240,10%,4%,0.9)];
-  }
-
-  .bg-midnight-ocean_gradient {
-    @apply bg-gradient-to-b from-[hsl(220,60%,10%)] to-[hsl(200,100%,20%)];
-  }
-
-  .text-cosmic-blue_gradient {
-    @apply bg-gradient-to-r from-[hsl(240,50%,50%)] to-[hsl(220,60%,60%)] text-transparent bg-clip-text;
-  }
-
-  .text-electric-blue_gradient {
-    @apply bg-gradient-to-r from-[hsl(190,100%,50%)] to-[hsl(230,100%,70%)] text-transparent bg-clip-text;
-  }
-
-  .bg-morning-mist_gradient {
-    @apply bg-gradient-to-b from-[hsla(210,30%,95%,0.8)] to-[hsla(220,30%,90%,0.9)];
-  }
-
-  .text-gentle-blue_gradient {
-    @apply bg-gradient-to-r from-[hsl(210,50%,40%)] to-[hsl(220,60%,50%)] text-transparent bg-clip-text;
-  }
-
+  @apply bg-[linear-gradient(135deg,hsl(240,11%,26%),hsl(240,7%,6%),hsl(240,50%,1%))];
+}
+@utility bg-frosty-mist_gradient {
+  @apply bg-linear-to-b from-[hsla(240,8%,12%,0.8)] to-[hsla(240,10%,4%,0.9)];
+}
+@utility bg-midnight-ocean_gradient {
+  @apply bg-linear-to-b from-[hsl(220,60%,10%)] to-[hsl(200,100%,20%)];
+}
+@utility text-cosmic-blue_gradient {
+  @apply bg-linear-to-r from-[hsl(240,50%,50%)] to-[hsl(220,60%,60%)] text-transparent bg-clip-text;
+}
+@utility text-electric-blue_gradient {
+  @apply bg-linear-to-r from-[hsl(190,100%,50%)] to-[hsl(230,100%,70%)] text-transparent bg-clip-text;
+}
+@utility bg-morning-mist_gradient {
+  @apply bg-linear-to-b from-[hsla(210,30%,95%,0.8)] to-[hsla(220,30%,90%,0.9)];
+}
+@utility text-gentle-blue_gradient {
+  @apply bg-linear-to-r from-[hsl(210,50%,40%)] to-[hsl(220,60%,50%)] text-transparent bg-clip-text;
+}
+@utility text-gradient-red-fire {
   /* Text Gradient Classes */
-  .text-gradient-red-fire {
-    @apply bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-sunset {
-    @apply bg-gradient-to-r from-red-600 via-pink-500 to-orange-400 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-rose {
-    @apply bg-gradient-to-r from-rose-500 via-red-500 to-pink-600 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-crimson {
-    @apply bg-gradient-to-r from-red-700 via-red-500 to-red-300 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-cherry {
-    @apply bg-gradient-to-r from-red-600 via-rose-500 to-pink-400 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-wine {
-    @apply bg-gradient-to-r from-red-900 via-red-700 to-red-500 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-coral {
-    @apply bg-gradient-to-r from-red-400 via-orange-400 to-orange-300 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-passion {
-    @apply bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-ember {
-    @apply bg-gradient-to-r from-orange-600 via-red-600 to-red-800 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-blush {
-    @apply bg-gradient-to-r from-pink-300 via-red-300 to-rose-400 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-flame {
-    @apply bg-gradient-to-r from-yellow-400 via-red-500 to-red-700 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-red-ruby {
-    @apply bg-gradient-to-r from-red-800 via-red-600 to-pink-500 bg-clip-text text-transparent;
-  }
-
+  @apply bg-linear-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-sunset {
+  @apply bg-linear-to-r from-red-600 via-pink-500 to-orange-400 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-rose {
+  @apply bg-linear-to-r from-rose-500 via-red-500 to-pink-600 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-crimson {
+  @apply bg-linear-to-r from-red-700 via-red-500 to-red-300 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-cherry {
+  @apply bg-linear-to-r from-red-600 via-rose-500 to-pink-400 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-wine {
+  @apply bg-linear-to-r from-red-900 via-red-700 to-red-500 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-coral {
+  @apply bg-linear-to-r from-red-400 via-orange-400 to-orange-300 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-passion {
+  @apply bg-linear-to-r from-red-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-ember {
+  @apply bg-linear-to-r from-orange-600 via-red-600 to-red-800 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-blush {
+  @apply bg-linear-to-r from-pink-300 via-red-300 to-rose-400 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-flame {
+  @apply bg-linear-to-r from-yellow-400 via-red-500 to-red-700 bg-clip-text text-transparent;
+}
+@utility text-gradient-red-ruby {
+  @apply bg-linear-to-r from-red-800 via-red-600 to-pink-500 bg-clip-text text-transparent;
+}
+@utility bg-gradient-red-fire {
   /* Background Gradient Classes */
-  .bg-gradient-red-fire {
-    @apply bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500;
-  }
+  @apply bg-linear-to-r from-red-500 via-orange-500 to-yellow-500;
+}
+@utility bg-gradient-red-sunset {
+  @apply bg-linear-to-br from-red-600 via-pink-500 to-orange-400;
+}
+@utility bg-gradient-red-rose {
+  @apply bg-linear-to-r from-rose-500 via-red-500 to-pink-600;
+}
+@utility bg-gradient-red-crimson {
+  @apply bg-linear-to-bl from-red-700 via-red-500 to-red-300;
+}
+@utility bg-gradient-red-cherry {
+  @apply bg-linear-to-r from-red-600 via-rose-500 to-pink-400;
+}
+@utility bg-gradient-red-wine {
+  @apply bg-linear-to-br from-red-900 via-red-700 to-red-500;
+}
+@utility bg-gradient-red-coral {
+  @apply bg-linear-to-r from-red-400 via-orange-400 to-orange-300;
+}
+@utility bg-gradient-red-passion {
+  @apply bg-linear-to-bl from-red-500 via-purple-500 to-pink-500;
+}
+@utility bg-gradient-red-ember {
+  @apply bg-linear-to-r from-orange-600 via-red-600 to-red-800;
+}
+@utility bg-gradient-red-blush {
+  @apply bg-linear-to-br from-pink-300 via-red-300 to-rose-400;
+}
+@utility bg-gradient-red-flame {
+  @apply bg-linear-to-bl from-yellow-400 via-red-500 to-red-700;
+}
+@utility bg-gradient-red-ruby {
+  @apply bg-linear-to-r from-red-800 via-red-600 to-pink-500;
+}
+@utility bg-gradient-red-dawn {
+  @apply bg-linear-to-r from-red-200 via-red-400 to-red-600;
+}
+@utility bg-gradient-red-dusk {
+  @apply bg-linear-to-br from-red-600 via-purple-600 to-indigo-700;
+}
 
-  .bg-gradient-red-sunset {
-    @apply bg-gradient-to-br from-red-600 via-pink-500 to-orange-400;
-  }
+/* New Dark/Light Mode Optimized Text Gradients */
+@utility text-gradient-red-shadow {
+  @apply bg-gradient-to-r from-red-500 via-gray-700 to-black bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-rose {
-    @apply bg-gradient-to-r from-rose-500 via-red-500 to-pink-600;
-  }
+@utility text-gradient-red-smoke {
+  @apply bg-gradient-to-r from-gray-400 via-red-400 to-gray-600 bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-crimson {
-    @apply bg-gradient-to-bl from-red-700 via-red-500 to-red-300;
-  }
+@utility text-gradient-red-steel {
+  @apply bg-gradient-to-r from-red-600 via-slate-500 to-gray-800 bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-cherry {
-    @apply bg-gradient-to-r from-red-600 via-rose-500 to-pink-400;
-  }
+@utility text-gradient-red-charcoal {
+  @apply bg-gradient-to-r from-gray-900 via-red-700 to-gray-700 bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-wine {
-    @apply bg-gradient-to-br from-red-900 via-red-700 to-red-500;
-  }
+@utility text-gradient-red-silver {
+  @apply bg-gradient-to-r from-red-400 via-gray-300 to-slate-400 bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-coral {
-    @apply bg-gradient-to-r from-red-400 via-orange-400 to-orange-300;
-  }
+@utility text-gradient-red-midnight {
+  @apply bg-gradient-to-r from-red-800 via-gray-900 to-black bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-passion {
-    @apply bg-gradient-to-bl from-red-500 via-purple-500 to-pink-500;
-  }
+@utility text-gradient-red-ash {
+  @apply bg-gradient-to-r from-gray-500 via-red-500 to-gray-400 bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-ember {
-    @apply bg-gradient-to-r from-orange-600 via-red-600 to-red-800;
-  }
+@utility text-gradient-red-graphite {
+  @apply bg-gradient-to-r from-red-600 via-gray-600 to-slate-700 bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-blush {
-    @apply bg-gradient-to-br from-pink-300 via-red-300 to-rose-400;
-  }
+@utility text-gradient-red-pearl {
+  @apply bg-gradient-to-r from-red-300 via-gray-200 to-white bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-flame {
-    @apply bg-gradient-to-bl from-yellow-400 via-red-500 to-red-700;
-  }
+@utility text-gradient-red-obsidian {
+  @apply bg-gradient-to-r from-black via-red-900 to-gray-800 bg-clip-text text-transparent;
+}
 
-  .bg-gradient-red-ruby {
-    @apply bg-gradient-to-r from-red-800 via-red-600 to-pink-500;
-  }
+/* New Dark/Light Mode Optimized Background Gradients */
+@utility bg-gradient-red-shadow {
+  @apply bg-gradient-to-br from-red-500 via-gray-700 to-black;
+}
 
-  .bg-gradient-red-dawn {
-    @apply bg-gradient-to-r from-red-200 via-red-400 to-red-600;
-  }
+@utility bg-gradient-red-smoke {
+  @apply bg-gradient-to-r from-gray-400 via-red-400 to-gray-600;
+}
 
-  .bg-gradient-red-dusk {
-    @apply bg-gradient-to-br from-red-600 via-purple-600 to-indigo-700;
+@utility bg-gradient-red-steel {
+  @apply bg-gradient-to-bl from-red-600 via-slate-500 to-gray-800;
+}
+
+@utility bg-gradient-red-charcoal {
+  @apply bg-gradient-to-r from-gray-900 via-red-700 to-gray-700;
+}
+
+@utility bg-gradient-red-silver {
+  @apply bg-gradient-to-br from-red-400 via-gray-300 to-slate-400;
+}
+
+@utility bg-gradient-red-midnight {
+  @apply bg-gradient-to-bl from-red-800 via-gray-900 to-black;
+}
+
+@utility bg-gradient-red-ash {
+  @apply bg-gradient-to-r from-gray-500 via-red-500 to-gray-400;
+}
+
+@utility bg-gradient-red-graphite {
+  @apply bg-gradient-to-br from-red-600 via-gray-600 to-slate-700;
+}
+
+@utility bg-gradient-red-pearl {
+  @apply bg-gradient-to-r from-red-300 via-gray-200 to-white;
+}
+
+@utility bg-gradient-red-obsidian {
+  @apply bg-gradient-to-bl from-black via-red-900 to-gray-800;
+}
+
+@utility bg-gradient-red-mist {
+  @apply bg-gradient-to-r from-gray-100 via-red-200 to-gray-300;
+}
+
+@utility bg-gradient-red-storm {
+  @apply bg-gradient-to-br from-gray-800 via-red-600 to-gray-900;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50 scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
@@ -366,7 +498,7 @@
 }
 
 .shine {
-  @apply bg-[30%_30%] bg-[length:200%_200%];
+  @apply bg-position-[30%_30%] bg-size-[200%_200%];
 }
 
 .waving-hand {
@@ -425,41 +557,41 @@
 }
 
 .rotate-60 {
-  @apply rotate-[60deg];
+  @apply rotate-60;
 }
 
 .rotate-120 {
-  @apply rotate-[120deg];
+  @apply rotate-120;
 }
 
 .rotate-180 {
-  @apply rotate-[180deg];
+  @apply rotate-180;
 }
 
 .rotate-240 {
-  @apply rotate-[240deg];
+  @apply rotate-240;
 }
 
 .rotate-300 {
-  @apply rotate-[300deg];
+  @apply rotate-300;
 }
 
 .-rotate-60 {
-  @apply -rotate-[60deg];
+  @apply -rotate-60;
 }
 
 .-rotate-120 {
-  @apply -rotate-[120deg];
+  @apply -rotate-120;
 }
 
 .-rotate-180 {
-  @apply -rotate-[180deg];
+  @apply -rotate-180;
 }
 
 .-rotate-240 {
-  @apply -rotate-[240deg];
+  @apply -rotate-240;
 }
 
 .-rotate-300 {
-  @apply -rotate-[300deg];
+  @apply -rotate-300;
 }

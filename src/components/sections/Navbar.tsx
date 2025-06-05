@@ -83,7 +83,7 @@ const Navbar = () => {
         <Link
           href="/#home"
           scroll
-          className="text-xl max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2 font-bold text-card-foreground transition-transform hover:text-foreground hover:scale-105 duration-300"
+          className="text-2xl max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2 font-bold text-gradient-red-wine transition-all hover:scale-105 duration-300"
         >
           Wojtek-Sz
         </Link>
@@ -92,7 +92,7 @@ const Navbar = () => {
           <NavItems />
         </nav>
         <Link href="#contact" className="group">
-          <Button className="bg-midnight-ocean_gradient">
+          <Button className="bg-gradient-red-wine">
             <span>Contact Me</span>
           </Button>
         </Link>

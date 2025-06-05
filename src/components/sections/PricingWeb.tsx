@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   animationPackages,
@@ -15,7 +13,7 @@ const PricingSection = () => {
   return (
     <section id="web" className="flex flex-col items-center gap-6 pt-20">
       <h3 className="text-center text-2xl font-bold text-accent-foreground sm:text-3xl">
-        <span className="text-gentle-blue_gradient">WEB</span> Packages
+        <span className="text-gradient-red-crimson">WEB</span> Packages
       </h3>
       <Tabs defaultValue="project-type">
         <TabsList className="mb-6 grid w-full grid-cols-4 text-sm sm:gap-2">
@@ -30,7 +28,7 @@ const PricingSection = () => {
               <Card3D
                 key={type.name}
                 className={
-                  "group row-span-3 grid cursor-default grid-rows-subgrid gap-0 hover:border-[hsl(190,100%,50%)]"
+                  "group row-span-3 grid cursor-default grid-rows-subgrid gap-0 hover:border-red-600"
                 }
               >
                 <CardContent pkg={type} />
@@ -44,7 +42,7 @@ const PricingSection = () => {
               <Card3D
                 key={pkg.name}
                 className={
-                  "group row-span-3 grid cursor-default grid-rows-subgrid gap-0 hover:border-[hsl(190,100%,50%)]"
+                  "group row-span-3 grid cursor-default grid-rows-subgrid gap-0 hover:border-red-600"
                 }
               >
                 <CardContent pkg={pkg} />
@@ -58,7 +56,7 @@ const PricingSection = () => {
               <Card3D
                 key={pkg.name}
                 className={
-                  "group row-span-3 grid cursor-default grid-rows-subgrid gap-0 hover:border-[hsl(190,100%,50%)]"
+                  "group row-span-3 grid cursor-default grid-rows-subgrid gap-0 hover:border-red-600"
                 }
               >
                 <CardContent pkg={pkg} />
@@ -72,7 +70,7 @@ const PricingSection = () => {
               <Card3D
                 key={pkg.name}
                 className={
-                  "group row-span-4 grid cursor-default grid-rows-subgrid gap-0 hover:border-[hsl(190,100%,50%)]"
+                  "group row-span-4 grid cursor-default grid-rows-subgrid gap-0 hover:border-red-600"
                 }
               >
                 <CardContent pkg={pkg} />
@@ -81,15 +79,6 @@ const PricingSection = () => {
           </div>
         </TabsContent>
       </Tabs>
-      <div className="grid w-full grid-cols-1 md:grid-cols-3 xl:gap-6">
-        <button
-          className={`bg-midnight-ocean_gradient col-span-1 rounded-md px-6 py-3 font-semibold text-foreground md:col-start-2`}
-        >
-          <Link scroll href="/#contact">
-            Contact
-          </Link>
-        </button>
-      </div>
     </section>
   );
 };

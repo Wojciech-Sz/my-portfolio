@@ -17,7 +17,7 @@ const CardContent = ({ pkg }: CardContentProps) => {
     <>
       <div>
         <h4
-          className={`group-hover:text-electric-blue_gradient text-gentle-blue_gradient mb-2 w-max text-2xl font-semibold`}
+          className={`group-hover:text-gradient-red-wine text-gradient-red-crimson mb-2 w-max text-2xl font-semibold`}
         >
           {pkg.name}
         </h4>
@@ -25,7 +25,7 @@ const CardContent = ({ pkg }: CardContentProps) => {
       </div>
       <p className={`mb-4 text-2xl font-bold`}>
         <span
-          className={`group-hover:text-electric-blue_gradient text-gentle-blue_gradient`}
+          className={`group-hover:text-gradient-red-wine text-gradient-red-crimson`}
         >
           {pkg.price}
         </span>
@@ -44,7 +44,7 @@ const CardContent = ({ pkg }: CardContentProps) => {
       {pkg.audience && (
         <p className="mb-6 text-sm text-card-foreground">
           <span
-            className={`group-hover:text-electric-blue_gradient text-gentle-blue_gradient`}
+            className={`group-hover:text-gradient-red-wine text-gradient-red-crimson`}
           >
             Ideal for:
           </span>{" "}

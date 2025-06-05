@@ -8,7 +8,7 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="c-space py-20">
       <h2 className="head-text">
-        Hear from<span className="text-cosmic-blue_gradient"> My Clients</span>
+        Hear from<span className="text-gradient-red-wine"> My Clients</span>
       </h2>
       <div className="client-container">
         {clientReviews.map(({ id, name, review, position, img }) => (

@@ -55,7 +55,7 @@ const About = () => {
   return (
     <section id="about" className="c-space py-20">
       <h2 className="head-text">
-        Few words<span className="text-cosmic-blue_gradient"> About Me</span>
+        Few words<span className="text-gradient-red-wine"> About Me</span>
       </h2>
       <div
         className={
@@ -89,13 +89,11 @@ const About = () => {
               {stack.map(({ img, name }, i) => (
                 <li
                   key={name}
-                  // eslint-disable-next-line tailwindcss/no-custom-classname
                   className={`li rotate-${i * 60} absolute left-1/2 top-0 h-1/2 origin-bottom -translate-x-1/2`}
                 >
                   <Image
                     src={img}
                     alt={name}
-                    // eslint-disable-next-line tailwindcss/no-custom-classname
                     className={`icon -rotate-${i * 60} size-10`}
                   />
                 </li>
